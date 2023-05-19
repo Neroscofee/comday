@@ -1,10 +1,12 @@
 <template>
   <div class="container">
     <div class="name">{{ myName }}</div>
-    <div class="days">我们已经相恋 {{ days }} 天</div>
+    <div class="days">距离领证: {{ timer }}</div>
     <div class="name">{{ herName }}</div>
-    <div class="timer">{{ timer }}</div>
-    <div class="timer">倒计时: {{ countdown }}</div>
+    <!-- <img class="heart" src="/src/assets/logo.png" /> -->
+    <img alt="Vue logo" src="../static/heart.png" />
+    <!-- <div class="timer">{{ timer }}</div> -->
+    <!-- <div class="timer">倒计时: {{ countdown }}</div> -->
   </div>
 </template>
 
@@ -12,8 +14,8 @@
 export default {
   data() {
     return {
-      myName: '帅气大帅哥',
-      herName: '秋茶小奶妹',
+      myName: '鲤鱼',
+      herName: '树',
       startDate: new Date('2021/07/26 22:00:00'), // 相恋开始日期
       days: 0, // 相恋天数
       timer: '', // 计时器
@@ -48,7 +50,7 @@ export default {
     updateTimer() {
       setInterval(() => {
         const now = new Date() // 当前时间
-        const diffMs = now - this.startDate // 计算时间差的毫秒数
+        const diffMs = this.futureDate - now // 计算时间差的毫秒数
         const diffSec = Math.floor(diffMs / 1000) // 转换为秒数
         const sec = diffSec % 60 // 计算剩余的秒数
         const min = Math.floor(diffSec / 60) % 60 // 计算剩余的分钟数
@@ -81,5 +83,10 @@ export default {
 
 .timer {
   margin-top: 20px;
+}
+
+.heart {
+  width: 200px;
+  height: 100px;
 }
 </style>
