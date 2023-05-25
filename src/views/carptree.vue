@@ -38,6 +38,13 @@ export default {
   mounted() {
     this.calculateDays() // 计算相恋天数
     this.updateTimer() // 更新计时器
+    let person = {
+      name: 'kk',
+      age: 15,
+    }
+    let someone = { ...person }
+    console.log('此时', someone)
+    console.table(someone)
   },
   methods: {
     calculateDays() {

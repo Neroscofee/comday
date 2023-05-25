@@ -4,7 +4,7 @@
     <div class="days">我们已经相恋 {{ days }} 天</div>
     <div class="name">{{ herName }}</div>
     <div class="timer">{{ timer }}</div>
-    <div class="timer">倒计时: {{ countdown }}</div>
+    <!-- <div class="timer">倒计时: {{ countdown }}</div> -->
   </div>
 </template>
 
